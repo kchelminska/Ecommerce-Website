@@ -15,28 +15,60 @@ body{
     background-color: #fff;
 }
 
+h1{
+    font-size: 5rem;
+    /* line-height: 6rem; */
+    color: green;
+}
+
+h2{
+    font-size: 4.5rem;
+    color: black;
+}
+
+/* h4 */
+h3{
+    font-size: 2rem;
+    color: red;
+}
+
+/* h6 */
+h5{
+    font-size: 1.2rem;
+    color: violet;
+    /* color: black; */
+}
+
+p{
+    font-size: 1.6rem;
+    color: grey;
+    margin: 15px 0 20px 0;
+}
+
 /* NAVIGATION */
 nav{
     display: flex;
     justify-content: space-between;
-    padding: 20px;
+    padding: 20px 80px;
     background-color: #fff;
     position: sticky;
     top: 0;
     left: 0;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     z-index: 100;
 }
 
-nav .logo a{
+nav a.logo{
     font-size: 2.5rem;
     font-weight: bold;
     font-family: 'Petit Formal Script', cursive;
     text-decoration: none;
     color: var(--fontColor);
+    width: 40%;
 }
 
 nav section{
-    width: 60%;   
+    width: 60%;
 }
 
 nav .menu{
@@ -46,7 +78,7 @@ nav .menu{
 
 nav .menu li{
     list-style: none;
-    width: 80px;
+    width: 90px;
     padding: 5px;
     cursor: pointer;
     position: relative;
@@ -56,7 +88,7 @@ nav .menu li{
 nav .menu li a{
     color: var(--fontColor);
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     text-transform: uppercase;
 }
 
@@ -87,6 +119,9 @@ nav .menu li.active::before{
     left: 0;
 }
 
+nav .mobile-burger, nav .menu .close{
+    display: none;
+}
 
 /* HEADER SECTION */
 header{
@@ -94,7 +129,7 @@ header{
     align-items: center;
     justify-content: center;
     height: 80vh;
-    background-image: url(/image/bg_image_header.jpg);
+    background-image: url(/image/headres/bg_image_header.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
@@ -102,9 +137,9 @@ header{
 }
 
 header h1{
-    font-size: 70px;
+    font-size: 7rem;
     text-transform: uppercase;
-    letter-spacing: 20px;
+    letter-spacing: 2rem;
     color: var(--fontColor);
 }
 
@@ -121,13 +156,12 @@ header h6{
 }
 
 /* FEATURES SECTION */
-
 section.features{
     display: flex;
     justify-content: space-around;
     padding-top: 40px;
     padding-bottom: 40px;
-    max-width: 1000px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
@@ -137,7 +171,150 @@ section .single-feature{
 
 section .single-feature img{
     margin-bottom: 10px;
-    width: 100px;
-    height: 100px;
+    height: 150px;
+    width: auto;
     border-radius: 50%;
+}
+
+/* PRODUCTS SECTION */
+.products-section{
+    text-align: center;
+}
+
+.products-section .product-container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 5%;
+}
+
+.products-section .product{
+    padding-top: 20px;
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    transition: 0.3s;
+}
+
+.products-section .product:hover{
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+}
+
+.products-section .product img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.products-section .product .product-info{
+    text-align: start;
+    padding: 10px 0;
+    position: relative;
+}
+
+.products-section .product .product-info span{
+    color: rgb(122, 121, 120);
+    font-size: 1.2rem;
+}
+
+.products-section .product .product-info h5{
+    padding-top: 7px;
+    font-size: 1.4rem;
+}
+
+.products-section .product .product-info i{
+    padding-top: 7px;
+    font-size: 1.3rem;
+    color: rgb(243, 181, 25);
+}
+
+.products-section .product .product-info h4{
+    padding-top: 7px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--fontColor);
+}
+
+.products-section .product .product-info .cart{
+    font-size: 2rem;
+    color: var(--fontColor);
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    transition: 0.2s;
+}
+
+.products-section .product .product-info .cart:hover{
+    color: black;
+    transition: 0.2s;
+}
+
+/* BANER SECTION */
+.baner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    min-height: 400px;
+    background-image: url(/image/headres/bg_header_yellow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 899px) {
+    nav .menu{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: white;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+        padding-top: 80px;
+        padding-left: 20px;
+        transition: .5s;
+    }
+
+    nav .menu.active{
+        right: 0;
+        transition: .5s;
+    }
+
+    nav .menu .close{
+        display: block;
+        position: absolute;
+        top: 30px;
+        left: 20px;
+        font-size: 2.5rem;
+        cursor: pointer;
+    }
+
+    nav .menu li{
+        margin-bottom: 30px;
+    }
+    nav .mobile-burger{
+        display: flex;
+        align-items: center;
+    }
+    nav .mobile-burger i{
+        color: var(--fontColor);
+        font-size: 2.3rem;
+        margin-left: 20px;
+        cursor: pointer;
+    }
+
+    nav a.logo{
+        width: 80%;
+    }
 }
