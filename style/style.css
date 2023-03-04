@@ -6,7 +6,9 @@
 
 :root{
     --fontColor: #CBA488;
+    --fontColorDark: #665548;
     --fontColorRgb: #cba4884d;
+    --hoverColor: #5E6D87;
     font-size: 10px;
     font-family: 'Roboto Mono', monospace;
 }
@@ -29,14 +31,14 @@ h2{
 /* h4 */
 h3{
     font-size: 2rem;
-    color: red;
+    color: var(--fontColorDark);
 }
 
 /* h6 */
 h5{
     font-size: 1.2rem;
-    color: violet;
-    /* color: black; */
+    /* color: violet; */
+    color: black;
 }
 
 p{
@@ -64,11 +66,6 @@ nav a.logo{
     font-family: 'Petit Formal Script', cursive;
     text-decoration: none;
     color: var(--fontColor);
-    width: 40%;
-}
-
-nav section{
-    width: 60%;
 }
 
 nav .menu{
@@ -80,6 +77,7 @@ nav .menu li{
     list-style: none;
     width: 90px;
     padding: 5px;
+    margin: 0 15px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -159,9 +157,9 @@ header h6{
 section.features{
     display: flex;
     justify-content: space-around;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    max-width: 1300px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -181,11 +179,15 @@ section .single-feature img{
     text-align: center;
 }
 
+.products-section h2{
+    margin-top: 50px;
+}
+
 .products-section .product-container{
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin: 0 5%;
+    margin: 50px 5%;
 }
 
 .products-section .product{
@@ -218,12 +220,10 @@ section .single-feature img{
 }
 
 .products-section .product .product-info span{
-    color: rgb(122, 121, 120);
     font-size: 1.2rem;
 }
 
 .products-section .product .product-info h5{
-    padding-top: 7px;
     font-size: 1.4rem;
 }
 
@@ -237,7 +237,7 @@ section .single-feature img{
     padding-top: 7px;
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--fontColor);
+    color: var(--hoverColor);
 }
 
 .products-section .product .product-info .cart{
@@ -254,22 +254,196 @@ section .single-feature img{
     transition: 0.2s;
 }
 
-/* BANER SECTION */
-.baner{
+/* BANER PROMOTION SECTION */
+.banner-promotion{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     margin-top: 40px;
-    margin-bottom: 40px;
-    min-height: 400px;
+    margin-bottom: 80px;
+    min-height: 300px;
     background-image: url(/image/headres/bg_header_yellow.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-@media screen and (max-width: 899px) {
+.banner-promotion span{
+    font-size: 1.7rem;
+    color: var(--hoverColor);
+    font-weight: bold;
+}
+
+.banner-promotion p{
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--hoverColor);
+}
+
+.link-button{
+    background-color: var(--hoverColor);
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.link-button a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 25px;
+    line-height: 35px;
+}
+
+.link-button:hover{
+    background-color: var(--fontColor);
+    transition: .3s;
+}
+
+/* BANNER SERIES SECTION */
+.banner-series{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5%;
+    margin: 0 auto;
+}
+
+.banner-flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+}
+
+.banner-flex span{
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+.banner-series .banner-box{
+    width: calc(50% - 20px);
+    height: 600px;
+    padding: 50px;
+}
+
+.banner-series .banner-box:nth-of-type(1){
+    background-image: url(/image/banners/fast-fashion-vs-slow-sustainable-fashion\ \(3\).jpg);
+}
+.banner-series .banner-box:nth-of-type(2){
+    background-image: url(/image/banners/cute-children-having-fun\ \(1\).jpg);
+}
+
+.banner-series .banner-box .link-button{
+    width: 200px;
+    text-align: center;
+}
+
+.banner-series .banner-season{
+    width: 33%;
+    height: 300px;
+    position: relative;
+    text-align: center;
+    transition: 1s;
+    padding: 30px;
+}
+
+.banner-series .banner-season .opacity{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--fontColorRgb);
+    display: none;
+}
+
+.banner-series .banner-season:hover .opacity{
+    display: initial;
+}
+
+.banner-series .banner-season h3{
+    z-index: 2;
+    font-size: 3rem;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.banner-series .banner-season:nth-of-type(1){
+    background-image: url(/image/banners/fast-fashion-vs-slow-sustainable-fashion\ \(2\).jpg);
+}
+
+.banner-series .banner-season:nth-of-type(2){
+    background-image: url(/image/banners/fast-fashion-vs-slow-sustainable-fashion\ \(1\).jpg);
+}
+.banner-series .banner-season:nth-of-type(3){
+    background-image: url(/image/banners/top-view-monochromatic-fabrics.jpg);
+}
+
+/* NEWSLETTER SECTION */
+
+.newsletter{
+    background-color: #e8ba57;
+    height: 180px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5%;
+}
+.newsletter .newsletter-text{
+    padding-right: 50px;
+    /* background-color: pink; */
+}
+
+.newsletter span{
+    font-weight: bold;
+}
+
+.newsletter form{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.newsletter form input{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 250px;
+    border-radius: 10px 0 0 10px;
+    padding: 0 20px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.newsletter form .newsletter-btn{
+    height: 50px;
+    border-radius: 0 10px 10px 0;
+    background-color: var(--hoverColor);
+    border: none;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    min-width: 150px;
+    transition: .3s;
+}
+
+.newsletter form .newsletter-btn:hover{
+    background-color: var(--fontColor);
+    transition: .3s;
+}
+
+
+
+
+@media screen and (max-width: 1024px){
+    nav .menu li{
+        margin: 0 10px;
+    }
+}
+
+
+
+@media screen and (max-width: 900px) {
     nav .menu{
         flex-direction: column;
         justify-content: flex-start;
@@ -281,7 +455,7 @@ section .single-feature img{
         width: 300px;
         background-color: white;
         box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
-        padding-top: 80px;
+        padding-top: 60px;
         padding-left: 20px;
         transition: .5s;
     }
@@ -314,7 +488,83 @@ section .single-feature img{
         cursor: pointer;
     }
 
-    nav a.logo{
-        width: 80%;
+    header h1{
+        font-size: 5rem;
+        padding: 0 20px;
+        text-align: center;
     }
+
+    section.features{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding-top: 60px;
+        padding-bottom: 60px;
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+    
+    section .single-feature img{
+        margin-bottom: 10px;
+        height: 100px;
+        width: auto;
+        border-radius: 50%;
+    }
+
+    .newsletter{
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 720px){
+    nav{
+        padding: 20px 50px;
+    }
+
+    .features .single-feature:nth-last-of-type(5){
+        display: none;
+    }
+    .products-section .product-container{
+        justify-content: space-around;
+    }
+
+    .banner-series{
+        flex-wrap: wrap;
+    }
+
+    .banner-series .banner-box{
+        width: 100%;
+        height: 300px;
+    }
+
+    .banner-series .banner-season{
+        width: 100%;
+        height: 100px;
+    }
+
+    .banner{
+        padding: 0 30px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    nav{
+        padding: 20px 30px;
+    }
+
+    .features .single-feature{
+        padding-top: 20px;
+    }
+    .features .single-feature:nth-last-of-type(4){
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 320px){
+    header h1{
+        font-size: 4rem;
+    }
+
 }
