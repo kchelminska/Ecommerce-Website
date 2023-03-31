@@ -56,7 +56,7 @@ nav{
     position: sticky;
     top: 0;
     left: 0;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     z-index: 100;
 }
 
@@ -66,6 +66,9 @@ nav a.logo{
     font-family: 'Petit Formal Script', cursive;
     text-decoration: none;
     color: var(--fontColor);
+}
+nav section{
+    width: 60%;
 }
 
 nav .menu{
@@ -77,7 +80,6 @@ nav .menu li{
     list-style: none;
     width: 90px;
     padding: 5px;
-    margin: 0 15px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -263,7 +265,7 @@ section .single-feature img{
     text-align: center;
     margin-top: 40px;
     margin-bottom: 80px;
-    min-height: 300px;
+    min-height: 400px;
     background-image: url(/image/headres/bg_header_yellow.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -385,20 +387,26 @@ section .single-feature img{
 /* NEWSLETTER SECTION */
 
 .newsletter{
-    background-color: #e8ba57;
-    height: 180px;
+    margin: 50px 0;
+    background-color: var(--fontColorDark);
+    min-height: 150px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     padding: 5%;
 }
+
 .newsletter .newsletter-text{
     padding-right: 50px;
-    /* background-color: pink; */
+}
+
+.newsletter .newsletter-text h3{
+    color: white;
 }
 
 .newsletter span{
     font-weight: bold;
+    color: var(--fontColor);
 }
 
 .newsletter form{
@@ -409,21 +417,23 @@ section .single-feature img{
 .newsletter form input{
     border: none;
     outline: none;
-    height: 50px;
-    width: 250px;
+    height: 55px;
+    width: 300px;
     border-radius: 10px 0 0 10px;
     padding: 0 20px;
     font-family: 'Roboto Mono', monospace;
+    font-size: 1.7rem;
 }
 
 .newsletter form .newsletter-btn{
-    height: 50px;
+    height: 55px;
     border-radius: 0 10px 10px 0;
     background-color: var(--hoverColor);
     border: none;
     color: white;
     font-family: 'Roboto Mono', monospace;
-    min-width: 150px;
+    width: 150px;
+    font-size: 1.7rem;
     transition: .3s;
 }
 
@@ -432,6 +442,79 @@ section .single-feature img{
     transition: .3s;
 }
 
+.contact{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--hoverColor);
+}
+
+.contact .contact-inputs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 50px 0;
+}
+
+.contact .contact-inputs form{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.contact .contact-inputs form legend{
+    font-size: 2rem;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.contact .contact-inputs .inputs{
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Roboto Mono', monospace;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.contact .contact-inputs textarea{
+    resize: none;
+}
+
+.contact .contact-inputs .socials {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 600px;
+}
+
+.contact .contact-inputs .socials .social{
+    font-size: 30px;
+    color: white;
+}
+
+.contact .google-map{
+    width: 50%;
+}
+
+.contact .google-map iframe{
+    width: 100%;
+    height: 100%;
+}
+
+footer{
+    background-color: white ;
+    color: var(--fontColorDark);
+    text-align: center;
+    padding: 20px;
+}
+
+footer a{
+    color: var(--fontColorDark);
+    text-decoration: none;
+}
 
 
 
@@ -443,7 +526,7 @@ section .single-feature img{
 
 
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 950px) {
     nav .menu{
         flex-direction: column;
         justify-content: flex-start;
@@ -546,6 +629,29 @@ section .single-feature img{
     .banner{
         padding: 0 30px;
     }
+
+    .contact{
+        flex-direction: column;
+    }
+
+    .contact .contact-inputs{
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .contact .contact-inputs .socials{
+        flex-direction: column;
+        width: 20%;
+    }
+
+    .contact .contact-inputs .socials .social{
+        margin-top: 20px;
+    }
+
+
+    .contact .google-map{
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 480px){
@@ -556,10 +662,31 @@ section .single-feature img{
     .features .single-feature{
         padding-top: 20px;
     }
+
     .features .single-feature:nth-last-of-type(4){
         display: none;
     }
 
+    .newsletter form input{
+        height: 55px;
+        width: 200px;
+        padding: 0 10px;
+        font-size: 1.5rem;
+    }
+
+    .newsletter form .newsletter-btn{
+        height: 55px;
+        width: 100px;
+        font-size: 1.5rem;
+    }
+    .contact .contact-inputs{
+        flex-direction: column;
+    }
+
+    .contact .contact-inputs .socials{
+        flex-direction: row;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 320px){
